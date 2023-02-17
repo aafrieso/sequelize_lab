@@ -22,3 +22,26 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Dog;
 };
+
+class Dog extends Model {
+  static associate(models) {
+
+    // define association here
+    Dog.hasMany(models.Feeding, {
+      foreignKey: 'dogId',
+      as: 'feedings'
+    })
+
+  }
+}
+
+class Feeding extends Model {
+  static associate(models) {
+    
+    // define association here
+    Feeding.belongsTo(models.Dog, {
+      foreignKey: 'dogId',
+    })
+
+  }
+}
