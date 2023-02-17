@@ -20,7 +20,6 @@ app.use(express.json())
 // mount imported routes
 app.use('/api/dogs', dogsRouter)
 app.use('/', indexRouter)
-app.use('/api/toys', toysRouter)
 
 // handle 404 errors
 app.use(function (req, res, next) {
