@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
+const toysRouter = require('./routes/toys.js')
 
 // import routers
 const dogsRouter = require('./routes/dogs.js')
@@ -19,6 +20,7 @@ app.use(express.json())
 // mount imported routes
 app.use('/api/dogs', dogsRouter)
 app.use('/', indexRouter)
+app.use('/api/toys', toysRouter)
 
 // handle 404 errors
 app.use(function (req, res, next) {

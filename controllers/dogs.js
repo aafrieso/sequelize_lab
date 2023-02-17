@@ -61,5 +61,5 @@ module.exports = {
   index,
   update,
   delete: deleteDog,
-  addFeeding,
+  addFeeding
 }
